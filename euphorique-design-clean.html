@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Euphorique Design</title>
+  <meta name="description" content="Euphorique Design helpt starters en kleine webshops met webshop design, Google Ads, Meta campagnes, Merchant Center en praktische e-commerce optimalisatie." />
+  <style>
+    :root {
+      --bg: #f8f5f0;
+      --surface: #ffffff;
+      --soft: #f2ece5;
+      --text: #23313d;
+      --muted: #66727d;
+      --line: #e7ddd3;
+      --accent: #b18864;
+      --accent-dark: #8f6848;
+      --navy: #2f3d4c;
+      --shadow: 0 18px 40px rgba(35,49,61,0.07);
+      --radius: 22px;
+      --max: 1160px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      background: rgba(248,245,240,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(35,49,61,0.06);
+    }
+
+    .nav {
+      min-height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+
+    .brand-name {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.7rem;
+      letter-spacing: 0.02em;
+    }
+
+    .brand-sub {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 22px;
+      align-items: center;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      box-shadow: 0 14px 28px rgba(177,136,100,0.26);
+    }
+
+    .btn-secondary {
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .hero {
+      padding: 64px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.08fr 0.92fr;
+      gap: 34px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: var(--soft);
+      color: var(--muted);
+      padding: 9px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2.6rem, 5vw, 4.8rem);
+      line-height: 1.04;
+      font-weight: 600;
+      margin-bottom: 16px;
+      max-width: 10ch;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 620px;
+    }
+
+    .hero-actions {
+      margin-top: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 26px;
+      max-width: 720px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid rgba(35,49,61,0.06);
+      border-radius: 18px;
+      padding: 16px;
+      box-shadow: var(--shadow);
+    }
+
+    .stat strong {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.93rem;
+    }
+
+    .hero-visual {
+      background: var(--surface);
+      border: 1px solid rgba(35,49,61,0.06);
+      border-radius: 28px;
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-visual svg {
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #fbf8f3 0%, #efe6dc 100%);
+    }
+
+    .section {
+      padding: 36px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+
+    .section-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.12;
+      font-weight: 600;
+      max-width: 12ch;
+    }
+
+    .section-header p {
+      max-width: 540px;
+      color: var(--muted);
+    }
+
+    .services,
+    .gallery,
+    .steps {
+      display: grid;
+      gap: 22px;
+    }
+
+    .services,
+    .steps {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .gallery {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card,
+    .gallery-card,
+    .about-box,
+    .contact-box,
+    .faq-box {
+      background: var(--surface);
+      border: 1px solid rgba(35,49,61,0.06);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .card,
+    .about-box,
+    .contact-box,
+    .faq-box {
+      padding: 26px;
+    }
+
+    .service-number,
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: #efe4d8;
+      color: var(--accent-dark);
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .card h3,
+    .gallery-content h3 {
+      margin-bottom: 10px;
+      font-size: 1.15rem;
+    }
+
+    .card p,
+    .gallery-content p,
+    .about-box p,
+    .contact-box p,
+    .faq-item p {
+      color: var(--muted);
+    }
+
+    .card ul {
+      list-style: none;
+      display: grid;
+      gap: 9px;
+      margin-top: 14px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .card li::before {
+      content: "• ";
+      color: var(--accent-dark);
+      font-weight: 700;
+    }
+
+    .gallery-card {
+      overflow: hidden;
+    }
+
+    .gallery-visual {
+      aspect-ratio: 4 / 3;
+      background: linear-gradient(180deg, #fbf8f3 0%, #ede2d5 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px;
+      border-bottom: 1px solid rgba(35,49,61,0.06);
+    }
+
+    .gallery-visual svg {
+      width: 100%;
+      height: auto;
+      max-width: 340px;
+    }
+
+    .gallery-content {
+      padding: 18px 18px 20px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .highlight-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .highlight-item,
+    .contact-item,
+    .faq-item {
+      background: #faf7f3;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 15px 16px;
+    }
+
+    .contact-list,
+    .faq-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 18px;
+    }
+
+    .contact-label {
+      display: block;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      font-size: 0.76rem;
+      margin-bottom: 5px;
+    }
+
+    .note {
+      margin-top: 18px;
+      font-size: 0.92rem;
+      color: var(--muted);
+    }
+
+    .cta {
+      padding: 6px 0 54px;
+    }
+
+    .cta-box {
+      background: var(--navy);
+      color: #fff;
+      border-radius: 28px;
+      padding: 34px;
+      box-shadow: 0 20px 46px rgba(47,61,76,0.18);
+    }
+
+    .cta-box h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(2rem, 3.2vw, 3rem);
+      line-height: 1.1;
+      font-weight: 600;
+      max-width: 12ch;
+      margin-bottom: 12px;
+    }
+
+    .cta-box p {
+      max-width: 670px;
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 22px;
+    }
+
+    .cta-box .btn-secondary {
+      background: rgba(255,255,255,0.08);
+      color: #fff;
+      border-color: rgba(255,255,255,0.16);
+    }
+
+    footer {
+      padding: 20px 0 34px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .footer-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      border-top: 1px solid rgba(35,49,61,0.08);
+      padding-top: 20px;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .services,
+      .gallery,
+      .steps,
+      .split,
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: start;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav {
+        padding: 12px 0;
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .hero {
+        padding-top: 34px;
+      }
+
+      .card,
+      .about-box,
+      .contact-box,
+      .faq-box,
+      .cta-box {
+        padding: 22px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container nav">
+      <a href="#home">
+        <span class="brand-name">Euphorique Design</span>
+        <span class="brand-sub">webshop • ads • groei</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#diensten">Diensten</a>
+        <a href="#portfolio">Aanpak</a>
+        <a href="#over">Over mij</a>
+        <a href="#contact" class="btn btn-primary">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Voor startende ondernemers en kleine webshops</div>
+          <h1>Rustige websites met een duidelijke commerciële basis.</h1>
+          <p class="hero-text">
+            Ik help ondernemers met het bouwen, verbeteren en laten groeien van hun webshop.
+            Van design en structuur tot Google Ads, Meta campagnes, Merchant Center en praktische optimalisatie.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary">Plan een kennismaking</a>
+            <a href="#diensten" class="btn btn-secondary">Bekijk mijn diensten</a>
+          </div>
+          <div class="stats">
+            <div class="stat">
+              <strong>Webshop bouwen</strong>
+              <span>Een professionele basis die vertrouwen uitstraalt.</span>
+            </div>
+            <div class="stat">
+              <strong>Google en Meta Ads</strong>
+              <span>Campagnes die logisch zijn opgezet en helder blijven.</span>
+            </div>
+            <div class="stat">
+              <strong>Webshop scan</strong>
+              <span>Duidelijke verbeterpunten als de verkoop traag loopt.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual" aria-hidden="true">
+          <svg viewBox="0 0 620 520" role="img">
+            <rect x="34" y="46" width="552" height="360" rx="28" fill="#ffffff" stroke="#e2d7cc"/>
+            <rect x="70" y="82" width="120" height="14" rx="7" fill="#c9b29c"/>
+            <rect x="70" y="114" width="210" height="16" rx="8" fill="#e9dfd5"/>
+            <rect x="70" y="146" width="170" height="12" rx="6" fill="#ede5db"/>
+            <rect x="70" y="190" width="210" height="150" rx="20" fill="#f3ece5" stroke="#e2d7cc"/>
+            <rect x="310" y="190" width="240" height="70" rx="20" fill="#f7f2ec" stroke="#e2d7cc"/>
+            <rect x="330" y="212" width="120" height="12" rx="6" fill="#b18864"/>
+            <rect x="330" y="236" width="170" height="10" rx="5" fill="#ddd0c2"/>
+            <rect x="310" y="276" width="240" height="64" rx="20" fill="#faf7f3" stroke="#e2d7cc"/>
+            <rect x="330" y="298" width="90" height="10" rx="5" fill="#2f3d4c" opacity="0.82"/>
+            <rect x="330" y="320" width="160" height="10" rx="5" fill="#ddd0c2"/>
+            <circle cx="170" cy="265" r="42" fill="#d8c0a8"/>
+            <rect x="110" y="230" width="120" height="72" rx="14" fill="#ffffff" opacity="0.72"/>
+            <rect x="52" y="424" width="516" height="28" rx="14" fill="#e7dbce"/>
+            <rect x="210" y="450" width="194" height="16" rx="8" fill="#c6ac93"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="diensten">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Diensten</div>
+            <h2>Waar ik jouw webshop mee kan helpen</h2>
+          </div>
+          <p>
+            De site is bewust rustiger gemaakt. Minder druk, duidelijkere blokken en meer visuele ruimte.
+          </p>
+        </div>
+
+        <div class="services">
+          <article class="card">
+            <div class="service-number">01</div>
+            <h3>Webshop bouwen of verbeteren</h3>
+            <p>Voor starters die professioneel online willen gaan of een bestaande webshop beter willen neerzetten.</p>
+            <ul>
+              <li>Homepagina en basisstructuur</li>
+              <li>Mobielvriendelijk ontwerp</li>
+              <li>Rustige en professionele uitstraling</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="service-number">02</div>
+            <h3>Google Ads en Meta campagnes</h3>
+            <p>Voor ondernemers die zichtbaar willen worden zonder alles zelf uit te zoeken.</p>
+            <ul>
+              <li>Campagnes opzetten</li>
+              <li>Campagnes verbeteren</li>
+              <li>Praktische uitleg zonder vakjargon</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="service-number">03</div>
+            <h3>Merchant Center en webshop scan</h3>
+            <p>Voor webshops die al online staan, maar waar zichtbaarheid of verkoop achterblijft.</p>
+            <ul>
+              <li>Merchant Center basis</li>
+              <li>Check van homepage en productpagina's</li>
+              <li>Concrete verbeterpunten</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Visuele blokken</div>
+            <h2>Meer beelden, maar nog steeds rustig</h2>
+          </div>
+          <p>
+            Deze illustraties geven de site meer leven zonder dat het druk wordt. Later kun je hier ook echte screenshots of portfolio-afbeeldingen plaatsen.
+          </p>
+        </div>
+
+        <div class="gallery">
+          <article class="gallery-card">
+            <div class="gallery-visual" aria-hidden="true">
+              <svg viewBox="0 0 360 260">
+                <rect x="35" y="38" width="290" height="184" rx="24" fill="#ffffff" stroke="#e1d6ca"/>
+                <rect x="62" y="64" width="88" height="12" rx="6" fill="#ba9370"/>
+                <rect x="62" y="88" width="146" height="10" rx="5" fill="#e7ddd2"/>
+                <rect x="62" y="116" width="110" height="70" rx="16" fill="#f3ece4" stroke="#e1d6ca"/>
+                <rect x="188" y="116" width="110" height="70" rx="16" fill="#faf7f3" stroke="#e1d6ca"/>
+                <rect x="82" y="208" width="196" height="12" rx="6" fill="#d3b89f"/>
+              </svg>
+            </div>
+            <div class="gallery-content">
+              <h3>Rustige homepage</h3>
+              <p>Een heldere eerste indruk met ruimte, structuur en vertrouwen.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-visual" aria-hidden="true">
+              <svg viewBox="0 0 360 260">
+                <rect x="44" y="36" width="272" height="188" rx="24" fill="#ffffff" stroke="#e1d6ca"/>
+                <rect x="70" y="68" width="80" height="12" rx="6" fill="#2f3d4c" opacity="0.88"/>
+                <rect x="70" y="94" width="210" height="10" rx="5" fill="#e7ddd2"/>
+                <rect x="70" y="126" width="32" height="58" rx="10" fill="#d9bda3"/>
+                <rect x="118" y="110" width="32" height="74" rx="10" fill="#c39b78"/>
+                <rect x="166" y="136" width="32" height="48" rx="10" fill="#e7ddd2"/>
+                <rect x="214" y="90" width="32" height="94" rx="10" fill="#b18864"/>
+                <rect x="262" y="122" width="18" height="62" rx="9" fill="#d7c7b7"/>
+              </svg>
+            </div>
+            <div class="gallery-content">
+              <h3>Ads en resultaten</h3>
+              <p>Visuele blokken voor campagnes, data of een eenvoudige rapportage.</p>
+            </div>
+          </article>
+
+          <article class="gallery-card">
+            <div class="gallery-visual" aria-hidden="true">
+              <svg viewBox="0 0 360 260">
+                <rect x="42" y="38" width="276" height="184" rx="24" fill="#ffffff" stroke="#e1d6ca"/>
+                <rect x="70" y="64" width="94" height="12" rx="6" fill="#ba9370"/>
+                <rect x="70" y="92" width="120" height="10" rx="5" fill="#e7ddd2"/>
+                <path d="M110 170c0-26 20-46 46-46h48c26 0 46 20 46 46" fill="#f3ece4" stroke="#d9ccbd"/>
+                <rect x="124" y="118" width="112" height="76" rx="18" fill="#f8f3ee" stroke="#e1d6ca"/>
+                <circle cx="146" cy="142" r="12" fill="#d7bba0"/>
+                <rect x="166" y="136" width="48" height="12" rx="6" fill="#2f3d4c" opacity="0.85"/>
+                <rect x="142" y="208" width="76" height="10" rx="5" fill="#b18864"/>
+              </svg>
+            </div>
+            <div class="gallery-content">
+              <h3>Professionele presentatie</h3>
+              <p>Een site die laat zien dat jouw bedrijf serieus en verzorgd is.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="werkwijze">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="eyebrow">Werkwijze</div>
+            <h2>Duidelijke stappen zonder ingewikkeld proces</h2>
+          </div>
+          <p>
+            Een klant wil snel begrijpen hoe samenwerken eruitziet. Daarom staat het hier eenvoudig uitgelegd.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="card">
+            <div class="step-number">1</div>
+            <h3>Kennismaking</h3>
+            <p>We bespreken jouw webshop, je doelen en waar je nu tegenaan loopt.</p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">2</div>
+            <h3>Plan van aanpak</h3>
+            <p>Je krijgt een helder voorstel met focus op wat nu het meeste verschil maakt.</p>
+          </article>
+
+          <article class="card">
+            <div class="step-number">3</div>
+            <h3>Uitvoering of advies</h3>
+            <p>Ik help je met design, advertenties, Merchant Center of webshopverbetering.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="over">
+      <div class="container split">
+        <div class="about-box">
+          <div class="eyebrow">Over mij</div>
+          <h2>Ik hou van websites die mooi zijn én logisch werken.</h2>
+          <p>
+            Ik richt mij op ondernemers die goed zijn in hun product of idee, maar hulp nodig hebben met de online kant.
+            Mijn aanpak is persoonlijk, praktisch en gericht op een professionele uitstraling.
+          </p>
+          <p>
+            Ik help met webshopdesign, basis marketing, Google Ads, Meta campagnes,
+            Merchant Center en het signaleren van verbeterpunten in een bestaande webshop.
+          </p>
+          <div class="highlight-list">
+            <div class="highlight-item"><strong>Rustige uitstraling</strong><br>Een website hoeft niet druk te zijn om professioneel over te komen.</div>
+            <div class="highlight-item"><strong>Duidelijke communicatie</strong><br>Geen moeilijk vakjargon, maar heldere uitleg en concrete stappen.</div>
+            <div class="highlight-item"><strong>Praktische focus</strong><br>Niet alleen een mooie site, maar ook aandacht voor structuur en vertrouwen.</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="contact-box" id="contact">
+            <div class="eyebrow">Contact</div>
+            <h2>Klaar om jouw webshop professioneel neer te zetten?</h2>
+            <p>
+              Ik heb hieronder alvast de contactblokken gezet. Vul alleen nog jouw echte gegevens in.
+            </p>
+
+            <div class="contact-list">
+              <div class="contact-item">
+                <span class="contact-label">KVK</span>
+                <span>VUL HIER JOUW KVK-NUMMER IN</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Mobiel</span>
+                <span>VUL HIER JOUW MOBIELE NUMMER IN</span>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">E-mail</span>
+                <a href="mailto:VUL-HIER-JOUW-EMAIL-IN">VUL HIER JOUW E-MAIL IN</a>
+              </div>
+              <div class="contact-item">
+                <span class="contact-label">Werkgebied</span>
+                <span>Nederland • online samenwerking</span>
+              </div>
+            </div>
+
+            <a class="btn btn-primary" href="mailto:VUL-HIER-JOUW-EMAIL-IN">Stuur een bericht</a>
+            <p class="note">Zodra je je echte e-mailadres hebt, vervang je alleen deze twee e-mailregels. De rest kan zo blijven staan.</p>
+          </div>
+
+          <div class="faq-box" style="margin-top: 22px;">
+            <div class="eyebrow">Extra</div>
+            <h2 style="font-family: Georgia, 'Times New Roman', serif; font-size: 2rem; line-height: 1.15; font-weight: 600; margin-bottom: 12px;">Handige blokken voor vertrouwen</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <strong>Voor wie?</strong>
+                <p>Voor starters en kleine ondernemers die online professioneel willen overkomen.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Wat kan later nog erbij?</strong>
+                <p>Portfolio, klantreviews, pakketten of een apart dienstenoverzicht.</p>
+              </div>
+              <div class="faq-item">
+                <strong>Wat heb je nu al?</strong>
+                <p>Een nette online basis waarmee je direct zichtbaar kunt zijn en klanten kunt laten bellen of mailen.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="eyebrow" style="background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.82);">Start vandaag</div>
+          <h2>Je hoeft niet te wachten op perfectie om professioneel online te staan.</h2>
+          <p>
+            Met een sterke basis kun je snel online, vertrouwen uitstralen en daarna rustig verder bouwen.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#contact">Neem contact op</a>
+            <a class="btn btn-secondary" href="#home">Terug naar boven</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> Euphorique Design</span>
+      <span>Webshop design • e-commerce • advertenties</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
